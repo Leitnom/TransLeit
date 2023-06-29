@@ -12,7 +12,9 @@ def main():
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CallbackQueryHandler(handle_callback_query))
     dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_text))
+    
     updater.start_polling()
+    
     print("Bot iniciado")
     updater.idle()
 
